@@ -1,0 +1,22 @@
+language: java
+jdk:
+  - openjdk14
+
+codecov: true
+
+sudo: false
+
+env:
+  global:
+    - CODECOV_TOKEN="18245e7f-86a8-4055-9486-f1a4c3f16d53"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+# Отправлять уведомление на почтуyouremail@smtp.ru(Изменить на свою) если сборка упала
+notifications:
+  email:
+    recipients:
+      - mazusik1@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
